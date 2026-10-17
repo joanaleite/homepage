@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joana Leite</title>
+
+    <!-- Font: IBM Plex Mono (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons: Font Awesome (email, LinkedIn, GitHub) and Academicons (ORCID, Ciência Vitae, Scholar) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <header class="hero">
-        <img src="photo.jpg" alt="Photo of Joana Leite" class="photo" />
-        <h1>Joana Leite</h1>
-        <p class="tagline">Statistics &amp; Data Science · Time Series and Forecasting</p>
-        <nav class="links">
-            <a href="https://github.com/joanaleite">GitHub</a>
-            <!-- add: ORCID, Google Scholar, university page, email -->
-        </nav>
+  </head>
+  <body class="home">
+    <!-- Top navigation -->
+    <header class="site-header">
+      <nav class="tabs">
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+      </nav>
     </header>
 
-    <script src="script.js"></script>
-</body>
+    <main class="intro">
+      <h1>Joana Leite</h1>
+      <p class="role">Statistics and data science</p>
+      <p class="role">Time series analysis and forecasting</p>
+
+      <!-- Icon links: aria-label is read by screen readers, title shows on hover -->
+      <nav class="links">
+        <a href="mailto:jleite.net@gmail.com" aria-label="Email" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://orcid.org/" aria-label="ORCID" title="ORCID">
+          <i class="ai ai-orcid"></i>
+        </a>
+        <a href="https://www.cienciavitae.pt/" aria-label="Ciência Vitae" title="Ciência Vitae">
+          <i class="ai ai-ciencia-vitae"></i>
+        </a>
+        <a href="https://scholar.google.com/" aria-label="Google Scholar" title="Google Scholar">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/joanaleite" aria-label="GitHub" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </nav>
+    </main>
+
+    <!-- Stylised forecast illustration -->
+    <img src="forecast.svg" alt="" class="illustration" />
+  </body>
 </html>

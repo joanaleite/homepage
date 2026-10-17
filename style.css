@@ -1,0 +1,126 @@
+/* ---------- Colours: change the palette here ---------- */
+:root {
+  --paper: #f4f5f3;   /* background */
+  --ink: #1c1f1d;     /* text */
+  --muted: #646b66;   /* secondary text and thin lines */
+  --accent: #2f6b4f;  /* green: hover and active tab */
+}
+ 
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.92rem;
+  line-height: 1.7;                       /* inherited by every element */
+}
+ 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: var(--accent);
+}
+ 
+a:focus-visible {                         /* visible outline for keyboard users */
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+ 
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+ 
+/* Same side margins on every block */
+.site-header,
+.intro,
+.page {
+  padding-inline: 8vw;
+}
+ 
+/* ---------- Header and tabs ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  padding-block: 2rem;
+}
+ 
+.brand {
+  font-weight: 500;
+}
+ 
+.tabs {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;                      /* always pushed to the right */
+}
+ 
+.tabs a[aria-current="page"] {            /* the tab of the page you are on */
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+ 
+/* ---------- Homepage ---------- */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;                 /* header, intro, illustration */
+}
+ 
+.intro {
+  padding-top: 8vh;
+}
+ 
+.role {
+  margin: 0;
+  color: var(--muted);
+}
+ 
+.links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  font-size: 1.3rem;
+}
+ 
+.illustration {
+  display: block;
+  width: 100%;
+  margin-top: auto;                       /* push the illustration to the bottom */
+}
+ 
+/* ---------- Inner pages ---------- */
+.page {
+  max-width: 680px;
+  padding-block: 4vh 10vh;
+}
+ 
+.page section {
+  border-top: 1px solid var(--muted);
+  padding-block: 1.5rem;
+}
+ 
+.page h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+ 
+small {
+  color: var(--muted);
+}
+ 
+/* ---------- Small screens: taller, cropped illustration ---------- */
+@media (max-width: 640px) {
+  .illustration {
+    height: 40vh;
+    object-fit: cover;
+    object-position: right bottom;        /* keep the forecast in view */
+  }
+}
