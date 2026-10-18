@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- Theme: loaded early so the page never flashes the wrong colours -->
+    <script src="theme.js"></script>
   </head>
   <body>
     <!-- Same navigation on every page; the name links back to the homepage -->
@@ -20,7 +22,14 @@
       <nav class="tabs">
         <a href="research.html" aria-current="page">Research</a>
         <a href="teaching.html">Teaching</a>
+        <a href="dataviz.html">DataViz</a>
       </nav>
+      <!-- Light / dark switch (theme.js makes it work) -->
+      <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
+        <span>Light</span>
+        <span class="track"><span class="thumb"></span></span>
+        <span>Dark</span>
+      </button>
     </header>
 
     <main class="page">
@@ -28,25 +37,14 @@
 
       <section>
         <h2>Interests</h2>
-        <ul>
-          <li>Time series analysis</li>
-          <li>Forecasting methods and evaluation</li>
-          <!-- add more interests -->
-        </ul>
       </section>
 
       <section>
-        <h2>Selected publications</h2>
-        <!-- Replace with your publications; the full list lives on ORCID and Ciência Vitae -->
-        <ol>
-          <li>Author, A., &amp; Leite, J. (2025). Title of the paper. <em>Journal Name</em>, 1(1), 1–10.</li>
-          <li>Leite, J., &amp; Author, B. (2024). Title of the paper. <em>Journal Name</em>, 1(1), 1–10.</li>
-        </ol>
+        <h2>Publications</h2>
       </section>
 
       <section>
         <h2>Projects</h2>
-        <p>Short description of a current project.</p>
       </section>
     </main>
   </body>

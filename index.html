@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <!-- Icons: Font Awesome (email, LinkedIn, GitHub) and Academicons (ORCID, Ciência Vitae, Scholar) -->
+    <!-- Icons: Font Awesome (LinkedIn, GitHub) and Academicons (ORCID, Ciência Vitae, Scholar) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -24,6 +24,8 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <!-- Theme: loaded early so the page never flashes the wrong colours -->
+    <script src="theme.js"></script>
   </head>
   <body class="home">
     <!-- Top navigation -->
@@ -31,35 +33,43 @@
       <nav class="tabs">
         <a href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
+        <a href="dataviz.html">DataViz</a>
       </nav>
+      <!-- Light / dark switch (theme.js makes it work) -->
+      <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
+        <span>Light</span>
+        <span class="track"><span class="thumb"></span></span>
+        <span>Dark</span>
+      </button>
     </header>
 
     <main class="intro">
-      <h1>Joana Leite</h1>
-      <p class="role">Statistics and data science</p>
-      <p class="role">Time series analysis and forecasting</p>
+      <img src="photo.jpg" alt="Photo of Joana Leite" class="photo" />
+      <div>
+        <h1>Joana Leite</h1>
+        <p class="role">Statistics and data science</p>
+        <p class="role">Time series analysis and forecasting</p>
 
-      <!-- Icon links: aria-label is read by screen readers, title shows on hover -->
-      <nav class="links">
-        <a href="mailto:jleite.net@gmail.com" aria-label="Email" title="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://orcid.org/" aria-label="ORCID" title="ORCID">
-          <i class="ai ai-orcid"></i>
-        </a>
-        <a href="https://www.cienciavitae.pt/" aria-label="Ciência Vitae" title="Ciência Vitae">
-          <i class="ai ai-ciencia-vitae"></i>
-        </a>
-        <a href="https://scholar.google.com/" aria-label="Google Scholar" title="Google Scholar">
-          <i class="ai ai-google-scholar"></i>
-        </a>
-        <a href="https://www.linkedin.com/" aria-label="LinkedIn" title="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/joanaleite" aria-label="GitHub" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </nav>
+        <!-- Icon links: aria-label is read by screen readers, title shows on hover -->
+        <nav class="links">
+          <a href="https://orcid.org/0000-0001-6828-9486" aria-label="ORCID" title="ORCID">
+            <i class="ai ai-orcid"></i>
+          </a>
+          <a href="https://www.cienciavitae.pt/en/051E-6AE4-EFE3" aria-label="Ciência Vitae" title="Ciência Vitae">
+            <i class="ai ai-ciencia-vitae"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=Lj4rzLUAAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/joana-leite-816356165/" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/joanaleite" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </nav>
+    
+      </div>
     </main>
 
     <!-- Stylised forecast illustration -->

@@ -5,7 +5,15 @@
   --muted: #646b66;   /* secondary text and thin lines */
   --accent: #2f6b4f;  /* green: hover and active tab */
 }
- 
+
+/* Dark theme: same names, different values */
+[data-theme="dark"] {
+  --paper: #161a18;
+  --ink: #e4e8e5;
+  --muted: #9aa39d;
+  --accent: #7fbf9b;  /* lighter green, readable on dark */
+}
+
 /* ---------- Base ---------- */
 body {
   margin: 0;
@@ -15,109 +23,217 @@ body {
   font-size: 0.92rem;
   line-height: 1.7;                       /* inherited by every element */
 }
- 
+
 a {
   color: inherit;
   text-decoration: none;
 }
- 
+
 a:hover {
   color: var(--accent);
 }
- 
+
 a:focus-visible {                         /* visible outline for keyboard users */
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
- 
+
 h1 {
   margin: 0 0 0.75rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
- 
+
 /* Same side margins on every block */
 .site-header,
 .intro,
 .page {
   padding-inline: 8vw;
 }
- 
+
 /* ---------- Header and tabs ---------- */
 .site-header {
   display: flex;
   align-items: center;
   padding-block: 2rem;
 }
- 
+
 .brand {
   font-weight: 500;
 }
- 
+
 .tabs {
   display: flex;
   gap: 2rem;
   margin-left: auto;                      /* always pushed to the right */
 }
- 
+
+/* Light / dark switch */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.track {
+  width: 32px;
+  height: 18px;
+  padding: 2px;
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.thumb {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+[data-theme="dark"] .thumb {
+  transform: translateX(14px);            /* slide the dot to the right */
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .tabs a[aria-current="page"] {            /* the tab of the page you are on */
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
 }
- 
+
 /* ---------- Homepage ---------- */
 .home {
   min-height: 100vh;
   display: flex;
   flex-direction: column;                 /* header, intro, illustration */
 }
- 
+
 .intro {
   padding-top: 8vh;
+  display: flex;                          /* photo and text side by side */
+  align-items: center;
+  gap: 2rem;
 }
- 
+
+.photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;                      /* crop instead of stretching */
+  border-radius: 50%;                     /* circle */
+  flex-shrink: 0;                         /* never squash the photo */
+}
+
 .role {
   margin: 0;
   color: var(--muted);
 }
- 
+
 .links {
   display: flex;
   gap: 1.25rem;
   margin-top: 1.75rem;
   font-size: 1.3rem;
 }
- 
+
 .illustration {
   display: block;
   width: 100%;
   margin-top: auto;                       /* push the illustration to the bottom */
 }
- 
+
+/* The SVG has fixed colours: in dark mode, invert them and turn the hue back to green */
+[data-theme="dark"] .illustration {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* ---------- Inner pages ---------- */
 .page {
   max-width: 680px;
   padding-block: 4vh 10vh;
 }
- 
+
 .page section {
   border-top: 1px solid var(--muted);
   padding-block: 1.5rem;
 }
- 
+
 .page h2 {
   margin: 0 0 1rem;
   font-size: 1rem;
   font-weight: 500;
   color: var(--accent);
 }
- 
+
 small {
   color: var(--muted);
 }
- 
+
+/* Links inside the text of inner pages: green and underlined, so they look clickable */
+.page p a {
+  color: var(--accent);                   /* green, stands out from the text */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.page p a:hover {
+  text-decoration-thickness: 2px;         /* thicker line on hover */
+}
+
+.lead {
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 /* ---------- Small screens: taller, cropped illustration ---------- */
 @media (max-width: 640px) {
+  .theme-toggle > span:not(.track) {
+    display: none;                        /* phones: hide the words, keep the switch */
+  }
+
+  /* Header on two rows: name on top, tabs and switch below */
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .tabs {
+    margin-left: 0;
+    gap: 1.25rem;
+  }
+
+  .theme-toggle {
+    margin-left: auto;                    /* switch on the right */
+  }
+
+  .intro {
+    flex-direction: column;               /* photo above the text on phones */
+    align-items: flex-start;
+  }
+
   .illustration {
     height: 40vh;
     object-fit: cover;
